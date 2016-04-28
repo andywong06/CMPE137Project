@@ -1,14 +1,14 @@
 //
-//  LoginViewController.swift
+//  HomeScreenViewController.swift
 //  FavSports
 //
-//  Created by Jay Bajaj on 4/25/16.
+//  Created by Alberto Reyes on 4/27/16.
 //  Copyright © 2016 CMPE 137. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class HomeScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +21,10 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
-    
-    @IBOutlet weak var emailTextField: UITextField!
+//    override func viewDidAppear(animated: Bool) {
+//        self.performSegueWithIdentifier("loginView", sender: self)
+//    }
 
-    @IBAction func loginAction(sender: UIButton) {
-    }
-    @IBOutlet weak var LogoutButton: UIButton!
-    @IBOutlet weak var passwordTextField: UITextField!
     /*
     // MARK: - Navigation
 
