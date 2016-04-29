@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OUP-bv-EVv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F28b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OUP-bv-EVv">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -161,7 +161,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="C16-9s-k00" id="h7j-7G-Qiz"/>
-                        <outlet property="passwordTextField" destination="ity-HM-7vj" id="jhd-3P-Lf1"/>
+                        <outlet property="passwordTextField" destination="ity-HM-7vj" id="21b-C8-cRw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhn-Kf-E2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,6 +197,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="cancelAction:" destination="aai-WI-k0E" eventType="touchUpInside" id="bnq-5s-CzF"/>
                                     <segue destination="3lW-3L-P2F" kind="show" identifier="CancelAccount" id="LEz-bG-05f"/>
                                 </connections>
                             </button>
@@ -211,6 +212,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountAction:" destination="aai-WI-k0E" eventType="touchUpInside" id="DvZ-pe-9Ps"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.081887610256671906" green="0.27225616574287415" blue="0.33993721008300781" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -231,6 +235,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="IBs-PW-Dhn" id="4YG-bj-qoZ"/>
+                        <outlet property="passwordTextField" destination="tQ0-01-ROD" id="Pa0-dr-5CC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emn-ip-4lD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,6 +288,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3CS-bR-FPL"/>
+        <segue reference="LEz-bG-05f"/>
     </inferredMetricsTieBreakers>
 </document>

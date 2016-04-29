@@ -21,8 +21,46 @@ class CreateAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+  /*  @IBAction func createAccountAction(sender: UIButton) {
+        let email = self.emailTextField.text
+        let password = self.passwordTextField.text
+        
+        if email != "" && password != ""
+        {
+            FIREBASE_REF.createUser(email, password: password, withCompletionBlock: { (error, authData)-> Void in
+                if error == nil
+                {
+                   FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData)-> Void in
+                    if error == nil{
+                        
+                    }
+                    else{
+                        
+                    }
+                    })
+                   })
+                }
+                else{
+                    print(error)
+                }
+            })
+
+            
+        }
+        else{
+            let alert = UIAlertController(title: "Error", message: "Enter Email and Password", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+
+    }*/
+    @IBAction func cancelAction(sender: UIButton) {
+    }
     @IBOutlet weak var emailTextField: UITextField!
 
+    @IBOutlet weak var passwordTextField: UITextField!
     /*
     // MARK: - Navigation
 
