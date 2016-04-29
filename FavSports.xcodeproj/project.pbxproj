@@ -14,6 +14,9 @@
 		69B674EE1CCE90F70071F19A /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B674ED1CCE90F70071F19A /* BaseService.swift */; };
 		69B674F01CCE92D70071F19A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B674EF1CCE92D70071F19A /* LoginViewController.swift */; };
 		69B674F21CCE92EA0071F19A /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B674F11CCE92EA0071F19A /* CreateAccountViewController.swift */; };
+		EC3D50A41CD158BD00FD20C6 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D50A31CD158BD00FD20C6 /* HomeScreenViewController.swift */; };
+		EC3D50A61CD1A8FD00FD20C6 /* BrowseTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D50A51CD1A8FD00FD20C6 /* BrowseTeamsViewController.swift */; };
+		EC3D50A81CD1AA0500FD20C6 /* TeamStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D50A71CD1AA0500FD20C6 /* TeamStatsViewController.swift */; };
 		F5240B0F67675F8657CA227C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2821ACE0E4E3D871F005AC9 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		69B674ED1CCE90F70071F19A /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		69B674EF1CCE92D70071F19A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		69B674F11CCE92EA0071F19A /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		EC3D50A31CD158BD00FD20C6 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		EC3D50A51CD1A8FD00FD20C6 /* BrowseTeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseTeamsViewController.swift; sourceTree = "<group>"; };
+		EC3D50A71CD1AA0500FD20C6 /* TeamStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamStatsViewController.swift; sourceTree = "<group>"; };
 		F2821ACE0E4E3D871F005AC9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F64F6452DEE3FD800425119C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,11 +91,14 @@
 				691428E21CCAEB5100AEB132 /* AppDelegate.swift */,
 				69B674ED1CCE90F70071F19A /* BaseService.swift */,
 				691428E61CCAEB5100AEB132 /* Main.storyboard */,
+				EC3D50A51CD1A8FD00FD20C6 /* BrowseTeamsViewController.swift */,
 				691428E91CCAEB5100AEB132 /* Assets.xcassets */,
 				691428EB1CCAEB5100AEB132 /* LaunchScreen.storyboard */,
 				691428EE1CCAEB5100AEB132 /* Info.plist */,
 				69B674EF1CCE92D70071F19A /* LoginViewController.swift */,
+				EC3D50A71CD1AA0500FD20C6 /* TeamStatsViewController.swift */,
 				69B674F11CCE92EA0071F19A /* CreateAccountViewController.swift */,
+				EC3D50A31CD158BD00FD20C6 /* HomeScreenViewController.swift */,
 			);
 			path = FavSports;
 			sourceTree = "<group>";
@@ -216,10 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC3D50A81CD1AA0500FD20C6 /* TeamStatsViewController.swift in Sources */,
 				69B674F21CCE92EA0071F19A /* CreateAccountViewController.swift in Sources */,
 				69B674F01CCE92D70071F19A /* LoginViewController.swift in Sources */,
 				691428E31CCAEB5100AEB132 /* AppDelegate.swift in Sources */,
+				EC3D50A61CD1A8FD00FD20C6 /* BrowseTeamsViewController.swift in Sources */,
 				69B674EE1CCE90F70071F19A /* BaseService.swift in Sources */,
+				EC3D50A41CD158BD00FD20C6 /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
