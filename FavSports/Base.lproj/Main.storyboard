@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udp-tc-FTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="1101"/>
+            <point key="canvasLocation" x="920" y="1101"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="L3k-KP-U14">
@@ -139,6 +139,13 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIX-Xr-gEp">
+                                <rect key="frame" x="277" y="443" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="AFo-Px-qXI" kind="presentation" id="oVs-00-LhL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.081887610256671906" green="0.27225616574287415" blue="0.33993721008300781" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -164,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhn-Kf-E2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="-454"/>
+            <point key="canvasLocation" x="1615" y="1076"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="Y7Y-Ny-zbq">
@@ -238,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emn-ip-4lD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527" y="326"/>
+            <point key="canvasLocation" x="1587" y="326"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5u2-VY-Zvg">
@@ -288,4 +295,7 @@
     <resources>
         <image name="search" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oVs-00-LhL"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -16,10 +16,11 @@ class BrowseTeamsViewController: UIViewController {
         
         
         
-        FIREBASE_REF.observeEventType(.Value, withBlock: {
+        CLUBS_REF.observeEventType(.ChildAdded, withBlock: {
             snapshot in
-            print("\(snapshot.key) -> \(snapshot.value)")
+            print("\(snapshot.value.objectForKey("name"))")
         })
+        
 
         // Do any additional setup after loading the view.
     }
