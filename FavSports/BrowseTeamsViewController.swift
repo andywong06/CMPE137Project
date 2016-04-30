@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class BrowseTeamsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        FIREBASE_REF.observeEventType(.Value, withBlock: {
+            snapshot in
+            print("\(snapshot.key) -> \(snapshot.value)")
+        })
 
         // Do any additional setup after loading the view.
     }
