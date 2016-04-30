@@ -39,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="865" y="326"/>
         </scene>
-        <!--Browse Teams View Controller-->
+        <!--Browse-->
         <scene sceneID="AUO-Dr-ouh">
             <objects>
                 <viewController id="AFo-Px-qXI" customClass="BrowseTeamsViewController" customModule="FavSports" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                             <constraint firstItem="qJL-UM-o5W" firstAttribute="centerX" secondItem="nkm-9u-ZOH" secondAttribute="centerX" id="neU-Yt-Rch"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="XhC-ax-DQW"/>
+                    <tabBarItem key="tabBarItem" title="Browse" image="search" id="XhC-ax-DQW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udp-tc-FTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhn-Kf-E2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="326"/>
+            <point key="canvasLocation" x="1527" y="-454"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="Y7Y-Ny-zbq">
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Emn-ip-4lD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="1101"/>
+            <point key="canvasLocation" x="1527" y="326"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5u2-VY-Zvg">
@@ -285,4 +285,7 @@
             <point key="canvasLocation" x="146" y="1101"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="search" width="512" height="512"/>
+    </resources>
 </document>
