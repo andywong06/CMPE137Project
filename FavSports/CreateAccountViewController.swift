@@ -21,30 +21,40 @@ class CreateAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-  /*  @IBAction func createAccountAction(sender: UIButton) {
-        let email = self.emailTextField.text
-        let password = self.passwordTextField.text
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+  @IBAction func createAccountAction(sender: UIButton) {
+    
+    let email = self.emailTextField.text
+    let password = self.passwordTextField.text
         
         if email != "" && password != ""
         {
-            FIREBASE_REF.createUser(email, password: password, withCompletionBlock: { (error, authData)-> Void in
-                if error == nil
-                {
-                   FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData)-> Void in
-                    if error == nil{
+            FIREBASE_REF.createUser( email, password: password, withValueCompletionBlock: { (error, authData)-> Void in
+                
+                if error == nil{
+                    FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData)-> Void in
                         
-                    }
-                    else{
-                        
-                    }
+                        if error==nil{
+                            NSUserDefaults.standardUserDefaults().setValue(authData, forKeyPath: "uid")
+                            print("Account Created")
+                            
+                            self.dismissViewControllerAnimated(true, completion: nil)
+                        }
+                        else {
+                            print(error)
+                        }
                     })
-                   })
                 }
                 else{
                     print(error)
                 }
+                
+                
+                
             })
-
             
         }
         else{
@@ -55,12 +65,13 @@ class CreateAccountViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         }
 
-    }*/
-    @IBAction func cancelAction(sender: UIButton) {
     }
-    @IBOutlet weak var emailTextField: UITextField!
 
-    @IBOutlet weak var passwordTextField: UITextField!
+
+    @IBAction func cancelAction(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     /*
     // MARK: - Navigation
 
