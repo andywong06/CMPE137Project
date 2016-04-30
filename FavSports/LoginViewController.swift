@@ -21,14 +21,50 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && CURRENT_USER.authData != nil{
+            //self.LogoutButton.hidden = false
+        }
+    }
     
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
 
     @IBAction func loginAction(sender: UIButton) {
+        let email = self.emailTextField.text
+        let password = self.passwordTextField.text
+        
+        if email != "" && password != ""
+        {
+            FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData)-> Void in
+                if error == nil
+                {
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKeyPath: "uid")
+                    print("Logged in")
+                }
+                else{
+                    print("error")
+                }
+                
+            })
+        }
+        else{
+            let alert = UIAlertController(title: "Error", message: "Enter Email and Password", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        }
     }
-    @IBOutlet weak var LogoutButton: UIButton!
-    @IBOutlet weak var passwordTextField: UITextField!
+        
+        
+    //@IBOutlet weak var LogoutButton: UIButton!
+            
+    
+            
     /*
     // MARK: - Navigation
 
