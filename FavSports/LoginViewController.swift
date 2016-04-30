@@ -43,6 +43,9 @@ class LoginViewController: UIViewController {
                 {
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKeyPath: "uid")
                     print("Logged in")
+                
+                   self.performSegueWithIdentifier("loggedIn", sender: self)
+                    
                 }
                 else{
                     print("error")
