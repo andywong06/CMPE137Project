@@ -38,7 +38,7 @@ class CreateAccountViewController: UIViewController {
                     FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData)-> Void in
                         
                         if error==nil{
-                            NSUserDefaults.standardUserDefaults().setValue(authData, forKeyPath: "uid")
+                            //NSUserDefaults.standardUserDefaults().setValue(authData, forKeyPath: "uid")
                             print("Account Created")
                             
                             self.dismissViewControllerAnimated(true, completion: nil)

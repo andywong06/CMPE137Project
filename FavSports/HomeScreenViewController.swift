@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class HomeScreenViewController: UIViewController {
 
@@ -16,6 +18,17 @@ class HomeScreenViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func logout_button_clicked(sender: UIButton) {
+        
+        CURRENT_USER.unauth()
+        
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
+        
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        
+        self.performSegueWithIdentifier("showLogin", sender: self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

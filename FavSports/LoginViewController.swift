@@ -7,13 +7,32 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var fbLoginButton = FBSDKLoginButton()
+        fbLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        fbLoginButton.center=self.view.center
+        fbLoginButton.delegate = self
+        self.view.addSubview(fbLoginButton)
 
-        // Do any additional setup after loading the view.
+        
+        if(FBSDKAccessToken.currentAccessToken()==nil){
+            print("Not logged in")
+        }
+        else{
+            self.performSegueWithIdentifier("showHome", sender: self)
+            print("Logged In")
+        }
+        
+        
+    // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,12 +40,32 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        if error == nil {
+            self.performSegueWithIdentifier("showHome", sender: self)
+            print("Log in complete")
+        }
+        else {
+            //print(error.localizedDescription)
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        print("User logged out")
+       
+    }
+    
+    
+    
+    
+    
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && CURRENT_USER.authData != nil{
+       /* if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && CURRENT_USER.authData != nil{
             //self.LogoutButton.hidden = false
-        }
+        }*/
     }
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -41,10 +80,10 @@ class LoginViewController: UIViewController {
             FIREBASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData)-> Void in
                 if error == nil
                 {
-                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKeyPath: "uid")
+                    //NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKeyPath: "uid")
                     print("Logged in")
                 
-                   self.performSegueWithIdentifier("loggedIn", sender: self)
+                   self.performSegueWithIdentifier("showHome", sender: self)
                     
                 }
                 else{
@@ -63,8 +102,6 @@ class LoginViewController: UIViewController {
         }
     }
         
-        
-    //@IBOutlet weak var LogoutButton: UIButton!
             
     
             
