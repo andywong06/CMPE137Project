@@ -12,7 +12,7 @@ import Firebase
 let BASE_URL = "https://favesports.firebaseio.com"
 
 let FIREBASE_REF = Firebase(url:BASE_URL)
-let CLUBS_REF = Firebase(url:"https://favesports.firebaseio.com/Clubs")
+let CLUBS_REF = Firebase(url:"https://favesports.firebaseio.com/Players/Chelsea")
 //let PLAYER_REF =
 //let SPORTS_REF =
 

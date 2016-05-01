@@ -179,7 +179,7 @@
         <!--Browse Teams-->
         <scene sceneID="TeS-33-QYF">
             <objects>
-                <viewController title="Browse Teams" id="CTY-RU-t7T" sceneMemberID="viewController">
+                <viewController title="Browse Teams" id="CTY-RU-t7T" customClass="BrowseTeamsViewController" customModule="FavSports" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="znT-Tk-gNF"/>
                         <viewControllerLayoutGuide type="bottom" id="8Mw-aR-C0Z"/>
