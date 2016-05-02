@@ -11,7 +11,6 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +20,28 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         fbLoginButton.center=self.view.center
         fbLoginButton.delegate = self
         self.view.addSubview(fbLoginButton)
-
-        
-        
-        
     // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.view.hidden = true
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if(FBSDKAccessToken.currentAccessToken()==nil){
+            print("Not logged in")
+        }
+        else{
+            self.performSegueWithIdentifier("showHome", sender: self)
+            print("Logged In")
+        }
+        
+        /* if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && CURRENT_USER.authData != nil{
+         //self.LogoutButton.hidden = false
+         }*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,21 +69,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if(FBSDKAccessToken.currentAccessToken()==nil){
-            print("Not logged in")
-        }
-        else{
-            self.performSegueWithIdentifier("showHome", sender: self)
-            print("Logged In")
-        }
 
-       /* if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && CURRENT_USER.authData != nil{
-            //self.LogoutButton.hidden = false
-        }*/
-    }
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!

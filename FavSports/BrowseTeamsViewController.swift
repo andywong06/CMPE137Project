@@ -15,6 +15,30 @@ class BrowseTeamsViewController: UIViewController, UITableViewDataSource, UITabl
     
     var categorizedTeams = [String: [String]]()
     
+    var teams = [String]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        CLUBS_REF.observeEventType(.Value, withBlock: { snapshot in
+            var newTeams = [String]()
+            for team in snapshot.children {
+                let name = team.value["name"] as! String
+                newTeams.append(name)
+            }
+            self.teams = newTeams
+            self.categorizedTeams = self.categorize(self.teams)
+            self.tableView.reloadData()
+            print(self.teams)
+        })
+        print("final array:")
+        for team in teams {
+            print("\(team)")
+        }
+        print(teams)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,25 +75,21 @@ class BrowseTeamsViewController: UIViewController, UITableViewDataSource, UITabl
         print("did load")
         //        teams = ["Sharks", "Kings", "Lakers", "Warriors", "Arsenal", "Man United", "Giants", "Dodgers", "49ers", "Raiders"]
         
-        var teams: [String] = []
-        
-        CLUBS_REF.observeEventType(.ChildAdded, withBlock: {
-            
-            snapshot in
-            print("\(snapshot.value.objectForKey("name"))")
-            let test = snapshot.value.objectForKey("name") as! String
-            print("test is: \(test)")
-            teams.append(test)
-            
-        })
+//        var teams: [String] = []
+//
+//        CLUBS_REF.observeEventType(.ChildAdded, withBlock: {
+//
+//            snapshot in
+//            print("\(snapshot.value.objectForKey("name"))")
+//            let test = snapshot.value.objectForKey("name") as! String
+//            print("test is: \(test)")
+//           teams.append(test)
+//
+//        })
         
         //teams += importTeams()
         
-        print("final array:")
-        for team in teams {
-            print("\(team)")
-        }
-        categorizedTeams = categorize(teams)
+        
         
 
     }
