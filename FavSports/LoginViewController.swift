@@ -16,20 +16,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var fbLoginButton = FBSDKLoginButton()
+        let fbLoginButton = FBSDKLoginButton()
         fbLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
         fbLoginButton.center=self.view.center
         fbLoginButton.delegate = self
         self.view.addSubview(fbLoginButton)
 
         
-        if(FBSDKAccessToken.currentAccessToken()==nil){
-            print("Not logged in")
-        }
-        else{
-            self.performSegueWithIdentifier("showHome", sender: self)
-            print("Logged In")
-        }
         
         
     // Do any additional setup after loading the view.
@@ -63,6 +56,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        if(FBSDKAccessToken.currentAccessToken()==nil){
+            print("Not logged in")
+        }
+        else{
+            self.performSegueWithIdentifier("showHome", sender: self)
+            print("Logged In")
+        }
+
        /* if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && CURRENT_USER.authData != nil{
             //self.LogoutButton.hidden = false
         }*/
